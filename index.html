@@ -3,12 +3,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kayzee Car Sales - Home</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Kayzee Car Sales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & basics */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+    nav a {
+      margin-left: 25px;
+      font-weight: 600;
+      color: #555;
+    }
+    nav a.active, nav a:hover {
+      color: #007bff;
+    }
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color: white;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 40px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      max-width: 500px;
+    }
+    .btn-primary {
+      background: #007bff;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      width: fit-content;
+      box-shadow: 0 3px 7px rgba(0,123,255,0.5);
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #0056b3;
+    }
+
+    /* Section Titles */
+    section h2 {
+      text-align: center;
+      margin: 50px 0 25px;
+      font-weight: 700;
+      color: #222;
+    }
+
+    /* Featured Cars */
+    .cars-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 0 20px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .car-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 280px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .car-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .car-info {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .car-info h3 {
+      margin: 0 0 10px;
+      font-weight: 700;
+      color: #007bff;
+    }
+    .car-info p {
+      margin: 0 0 15px;
+      color: #555;
+      flex-grow: 1;
+    }
+    .car-info .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    .car-info button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+    .car-info button:hover {
+      background: #1e7e34;
+    }
+
+    /* About */
+    .about {
+      background: white;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    .about p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* Contact Preview */
+    .contact-preview {
+      background: #007bff;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto 80px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    .contact-preview h2 {
+      margin-bottom: 20px;
+    }
+    .contact-preview p {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .contact-preview a {
+      background: white;
+      color: #007bff;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-weight: 700;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    .contact-preview a:hover {
+      background: #e6e6e6;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .cars-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .car-card {
+        width: 90%;
+      }
+      .hero {
+        height: 300px;
+        padding-left: 20px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Kayzee Car Sales Logo" class="logo" />
+    <div class="logo">Kayzee Car Sales</div>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="cars.html">Cars</a>
@@ -17,16 +245,60 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to Kayzee Car Sales</h1>
-      <p>Your trusted partner for luxury and quality cars.</p>
-      <a href="cars.html" class="btn">Browse Cars</a>
-    </section>
-  </main>
+  <section class="hero">
+    <h1>Find Your Perfect Car Today</h1>
+    <p>Quality used cars, trusted service, and great deals at Kayzee Car Sales.</p>
+    <button class="btn-primary" onclick="location.href='cars.html'">Browse Cars</button>
+  </section>
+
+  <section>
+    <h2>Featured Cars</h2>
+    <div class="cars-container">
+      <div class="car-card">
+        <img src="images/car1.jpg" alt="Car 1" />
+        <div class="car-info">
+          <h3>2018 Toyota Corolla</h3>
+          <p>Reliable, fuel-efficient sedan perfect for city driving.</p>
+          <div class="price">$12,500</div>
+          <button onclick="location.href='contact.html'">Enquire Now</button>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="images/car2.jpg" alt="Car 2" />
+        <div class="car-info">
+          <h3>2019 Honda Civic</h3>
+          <p>Sporty and comfortable with great mileage.</p>
+          <div class="price">$14,700</div>
+          <button onclick="location.href='contact.html'">Enquire Now</button>
+        </div>
+      </div>
+      <div class="car-card">
+        <img src="images/car3.jpg" alt="Car 3" />
+        <div class="car-info">
+          <h3>2017 Ford Focus</h3>
+          <p>Compact and affordable with excellent handling.</p>
+          <div class="price">$11,000</div>
+          <button onclick="location.href='contact.html'">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Kayzee Car Sales</h2>
+    <p>
+      At Kayzee Car Sales, we pride ourselves on providing quality used cars at fair prices. Our team is dedicated to helping you find the perfect vehicle that suits your needs and budget. We believe in honest service and building long-term relationships with our customers.
+    </p>
+  </section>
+
+  <section class="contact-preview">
+    <h2>Get In Touch</h2>
+    <p>Have questions or want to book a test drive? Reach out to us today!</p>
+    <a href="contact.html">Contact Us</a>
+  </section>
 
   <footer>
-    <p>© 2025 Kayzee Car Sales. All rights reserved.</p>
+    &copy; 2025 Kayzee Car Sales. All rights reserved.
   </footer>
 </body>
 </html>
