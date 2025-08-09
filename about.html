@@ -3,12 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kayzee Car Sales - About Us</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>About Us - Kayzee Car Sales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #007bff;
+    }
+    nav a {
+      margin-left: 25px;
+      font-weight: 600;
+      color: #555;
+      text-decoration: none;
+    }
+    nav a.active, nav a:hover {
+      color: #007bff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .founder {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .founder img {
+      width: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+    .founder-info {
+      max-width: 700px;
+    }
+    .founder-info h2 {
+      margin: 0 0 10px;
+      color: #007bff;
+      font-weight: 700;
+    }
+    .founder-info p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="images/logo.png" alt="Kayzee Car Sales Logo" class="logo" />
+    <div class="logo">Kayzee Car Sales</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="cars.html">Cars</a>
@@ -20,18 +101,26 @@
   <main>
     <h1>About Kayzee Car Sales</h1>
     <p>
-      Kayzee Car Sales has been your trusted partner in buying and selling
-      quality cars since 2020. We are committed to offering a wide selection
-      of luxury and pre-owned vehicles at competitive prices.
+      At Kayzee Car Sales, we pride ourselves on offering quality vehicles at great prices. With over 10 years of experience in the automotive industry, our goal is to provide our customers with a hassle-free and transparent buying experience.
     </p>
     <p>
-      Our mission is to provide an excellent car buying experience with
-      transparency, quality, and customer satisfaction.
+      We carefully inspect each car to ensure it meets our high standards of safety and performance. Whether you're looking for a reliable family car, a sporty coupe, or a budget-friendly sedan, Kayzee Car Sales has something for everyone.
     </p>
-  </main>
+    <p>
+      Our dedicated team is here to answer your questions and help you find the perfect vehicle that suits your needs and budget.
+    </p>
 
-  <footer>
-    <p>© 2025 Kayzee Car Sales. All rights reserved.</p>
-  </footer>
+    <div class="founder">
+      <img src="images/founder.jpg" alt="Kayzee Founder" />
+      <div class="founder-info">
+        <h2>Kayzee Johnson</h2>
+        <p>
+          Founder & CEO  
+          <br />
+          Kayzee has been passionate about cars since childhood and started Kayzee Car Sales to make car buying accessible and enjoyable for everyone.
+        </p>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
